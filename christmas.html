@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Christmas Vacation</title>
+</head>
+<style>
+   body{
+        background-image: url(a.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+<body>
+    <div class="container" style="padding-top: 50px;">
+
+        <button class="btn btn-lg btn-info" style="position: absolute; top: 45%; right: 45%;"><h1>Start Exam</h1><i class="fas fa-arrow"></i></button>
+        <div>
+            <span id="timer">
+              <label id="time" style="color: white; font-size: 150px;">5</label>      
+            </span>
+          </div>
+        <div class="card" style="opacity: 0.8; display: none;">
+            <div class="card-header bg-success" style="color: white;">
+                <h1>Merry Christmas</h1>
+            </div>
+            <div class="card-body">
+                <h1>Happy holidays. Spend time with your family and love ones.</h1>
+                <h3>“Continuous effort– not strength or intelligence – is the key to unlocking our potential.</h3>
+                <h4>Here's your 100 points :)</h4>
+            </div>
+        </div>
+    </div>
+   
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
+<script>
+    $(document).ready(function(){
+        $('button').click(function(){
+        
+          var counter = 5;
+var interval = setInterval(function() {
+    counter--;
+    // Display 'counter' wherever you want to display it.
+    if (counter <= 0) {
+     		clearInterval(interval);
+             $('.card').show("slow");
+             $('button').hide();
+             $('#time').hide();
+        return;
+    }else{
+    	$('#time').text(counter);
+      console.log("Timer --> " + counter);
+    }
+}, 1000);
+        })
+    })
+</script>
+</html>
